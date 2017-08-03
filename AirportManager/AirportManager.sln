@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{33A56773-59AC-8C0E-DEF2-55A6F123B303}") = "AirportManager", "Assembly-CSharp.csproj", "{E1DDA987-F000-7CFE-220F-5A951F26F5EB}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportManager", "Assembly-CSharp.csproj", "{E1DDA987-F000-7CFE-220F-5A951F26F5EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +36,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal

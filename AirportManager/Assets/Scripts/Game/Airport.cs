@@ -9,7 +9,6 @@ public enum TYPE_RESOURCES
 	GOLD,
 	HAPPINESS,
 	CLEANNESS,
-
 	COUNT
 }
 
@@ -30,13 +29,13 @@ public class Airport : MonoBehaviour {
 		}
 	}
 
-	PackResources userResources;
+	PackResources _userResources;
 	List<Building> _buildings =  new List<Building>();
 	Dictionary<int,BuildingData> _buildingData = new Dictionary<int, BuildingData>();
 
 	public PackResources UserResources
 	{
-		set{ userResources = value;} get { return userResources;}
+		set{ _userResources = value;} get { return _userResources;}
 	}
 
 	public List<Building> Buildings
@@ -56,7 +55,7 @@ public class Airport : MonoBehaviour {
 	public void InitAirport ()
 	{
 		//Get Player Resources
-		userResources.resources = new Dictionary<TYPE_RESOURCES, float> ();
+		_userResources.resources = new Dictionary<TYPE_RESOURCES, long> ();
 		//Get Player Buildings
 
 	
@@ -71,7 +70,7 @@ public class Airport : MonoBehaviour {
 	{
 		foreach (Building b in _buildings) 
 		{
-			userResources = userResources + b.UpdateBuildingResources(dt);
+			_userResources = _userResources + b.UpdateBuildingResources(dt);
 		}
 
 		Save ();

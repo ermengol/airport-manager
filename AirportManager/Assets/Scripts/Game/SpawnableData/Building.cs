@@ -14,12 +14,12 @@ public enum BUILDING_TYPE
 	COUNT
 }
 
-public class BuildingData
+public class BuildingData : SpawnableObjectData
 {
+    int _buildingID;
 	BUILDING_TYPE _type;
 	PackResources _amountResourcesXMin;
-	int _price;
-	string _prefabName;
+
 
 	public BUILDING_TYPE Type{
 		get{return _type;}
@@ -30,9 +30,9 @@ public class BuildingData
 		get{return _amountResourcesXMin;}
 	}
 
-	public int Price
+	public PackResources Cost
 	{
-		get{return _price;}
+		get{return _cost;}
 	}
 
 	public string PrefabName
@@ -51,7 +51,7 @@ public class BuildingData
 //This will translate with flights on increase of people in the airport.
 public class Building : MonoBehaviour {
 
-	int buildingID;
+	int _uid;
 	
 	public PackResources UpdateBuildingResources(float dt)
 	{

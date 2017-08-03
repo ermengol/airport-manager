@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 public struct PackResources
 {
-	public Dictionary <TYPE_RESOURCES,float> resources;
+	public Dictionary <TYPE_RESOURCES,long> resources;
 
 	public static PackResources operator + (PackResources a, PackResources b)
 	{
 		PackResources outResources;
-		outResources.resources = new Dictionary<TYPE_RESOURCES, float> ();
+		outResources.resources = new Dictionary<TYPE_RESOURCES, long> ();
 		for (int i = 0; i < (int)TYPE_RESOURCES.COUNT; i ++) 
 		{
 			if(a.resources.ContainsKey((TYPE_RESOURCES) i) && b.resources.ContainsKey((TYPE_RESOURCES) i))
@@ -31,12 +31,12 @@ public struct PackResources
 	public static PackResources operator * (PackResources a, float amount)
 	{
 		PackResources outResources;
-		outResources.resources = new Dictionary<TYPE_RESOURCES, float> ();
+		outResources.resources = new Dictionary<TYPE_RESOURCES, long> ();
 		for (int i = 0; i < (int)TYPE_RESOURCES.COUNT; i ++) 
 		{
 			if(a.resources.ContainsKey((TYPE_RESOURCES) i))
 			{
-				outResources.resources.Add((TYPE_RESOURCES) i, a.resources[(TYPE_RESOURCES)i] * amount);
+				outResources.resources.Add((TYPE_RESOURCES) i, (long)(a.resources[(TYPE_RESOURCES)i] * amount));
 			}
 		}
 		return outResources;
